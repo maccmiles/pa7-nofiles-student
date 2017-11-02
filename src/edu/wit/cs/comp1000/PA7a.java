@@ -1,8 +1,13 @@
 package edu.wit.cs.comp1000;
 
 import java.util.Scanner;
+import java.util.NoSuchElementException;
 
-//TODO: document this class
+/**
+ * PA7a
+ * @author Miles Macchiaroli
+ *
+ */
 public class PA7a {
 	
 	/**
@@ -15,7 +20,14 @@ public class PA7a {
 	 * @return number of integers read
 	 */
 	public static int readIntoArray(Scanner input, int[] nums) {
-		return 0; // TODO: replace with your code
+		int numTotal = 0;//Total numbers read to array
+		for (int i = 0; i < 100; i++) {
+			try{nums[i] = input.nextInt();}//attempt to add ints to array
+			catch(NoSuchElementException e){break;}//when no int available
+			numTotal++;
+		}
+		
+		return numTotal;
 	}
 	
 	/**
@@ -27,8 +39,28 @@ public class PA7a {
 	 * @param size number of valid elements
 	 */
 	public static void printAboveAverage(int[] nums, int size) {
-		// TODO: write your code here
-	}
+		double avg = 0;
+		String above = "";
+		for (int i = 0; i < size; i++) {
+			avg = avg + nums[i];//add all numbers together
+		}
+		if (size != 0){avg = avg / size;}//if array is populated, calculate avg
+		else {avg = 0;}//else set 0, prevent impossible division
+		System.out.printf("Average: %.2f%n", avg);//print avg
+		////
+		System.out.printf("Values above average:");
+		for (int i = 0; i < size; i++) {//check any numbers over avg
+			if(nums[i] > avg) {
+		above += " nums[" + i + "]=" + nums[i] + ",";}//fabricate string
+		}
+		if (above.length() == 0) {
+			System.out.printf(" none%n");//print 'none' if string is empty
+			}
+		else {
+			above = above.substring(0, above.length()-1);//remove extra ',' from string
+			System.out.printf("%s%n", above);
+		}
+		}
 
 	/**
 	 * Program execution point:
@@ -38,7 +70,13 @@ public class PA7a {
 	 * @param args command-line arguments (ignored)
 	 */
 	public static void main(String[] args) {
-		// TODO: write your code here
+		int nums[] = new int[100];//set new array
+		int size = 0;
+		Scanner input = new Scanner(System.in);//call Scanner
+		System.out.printf("Enter up to 100 integers: ");
+		size = readIntoArray(input, nums);//send input of scanner to Method
+		printAboveAverage(nums, size);//Request average to be calculated and printed
+		
 	}
 
 }

@@ -1,0 +1,18 @@
+Score: 75
+
+== ontime ==
+ontime: +0
+
+== junit ==
+edu.wit.cs.comp1000.grading.PA7aGrading#testReadIntoArray: +15
+edu.wit.cs.comp1000.grading.PA7aGrading#testPrintAboveAverage: +15
+edu.wit.cs.comp1000.grading.PA7aGrading#testPrintAboveAverage2: +5
+edu.wit.cs.comp1000.grading.PA7aGrading#testSequence: +10
+edu.wit.cs.comp1000.grading.PA7aGrading#testSequence2: +5
+edu.wit.cs.comp1000.grading.PA7bGrading#testEmpty: +0
+edu.wit.cs.comp1000.grading.PA7bGrading#testZero: +0
+edu.wit.cs.comp1000.grading.PA7bGrading#testLettersLower: +0
+edu.wit.cs.comp1000.grading.PA7bGrading#testLettersUpper: +0
+edu.wit.cs.comp1000.grading.PA7bGrading#testLettersMixed: +0
+edu.wit.cs.comp1000.grading.PA7bGrading#testHelloWorld: +10
+edu.wit.cs.comp1000.grading.PA7bGrading#testAll: +0
